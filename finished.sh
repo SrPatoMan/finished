@@ -1,11 +1,17 @@
 #!/bin/bash
 #By Manuel Ramos
 
-WEBHOOK_DISCORD="" # PON AQUI TU WEBHOOK DE DISCORD
+WEBHOOK_DISCORD="" #PON AQUI TU WEBHOOK DE DISCORD
 
 WEBHOOK_TELEGRAM="" # PON AQUI TU WEBHOOK DE TELEGRAM
 
 PLATFORM="discord" # PONER telegram o discord (segun la plataforma que uses)
+
+if [[ -z "$WEBHOOK_DISCORD" && -z "$WEBHOOK_TELEGRAM" ]];then
+echo -e "\n[!] NO HAS ESTABLECIDO NINGUN WEBHOOK!!\n"
+echo -e "[+] Abre el script e introduce tu webhook de telegram o discord"
+exit
+fi
 
 "$@"
 exit_code=$?
